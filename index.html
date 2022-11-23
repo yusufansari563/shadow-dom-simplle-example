@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <script src="index.js"></script>
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
     <style>
       h2{
         color: antiquewhite;
@@ -13,7 +13,20 @@
     </style>
   </head>
   <body>
-    <h2>Hi there</h2>
-    <my-product name="headphone"></my-product>
+    <div class="container">
+      <h2>Hi there</h2>
+    </div>
+    <my-product name="headphone">
+      <div class="container">
+        demo
+      </div>
+    </my-product>
   </body>
+  <script >
+    function demo() {
+      console.log("parent");
+    }
+  </script>
+    <script src="index.js"></script>
+
 </html>

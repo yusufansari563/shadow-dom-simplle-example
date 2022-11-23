@@ -1,0 +1,24 @@
+<!-- ref -->
+<!-- https://javascript.info/shadow-dom-events -->
+
+<user-card id="userCard">
+    <span slot="username">John Smith</span>
+    <span slot="fullname">yusuf ansari</span>
+  </user-card>
+  
+  <script>
+  customElements.define('user-card', class extends HTMLElement {
+    connectedCallback() {
+      this.attachShadow({mode: 'open'});
+      this.shadowRoot.innerHTML = `<div>
+        <b>Name:</b> <slot name="username"></slot>
+        <b>full Name:</b> <slot name="fullname"></slot>
+      </div>`;
+  
+      this.shadowRoot.firstElementChild.onclick =
+        e => alert("Inner target: " + e.target.tagName);
+    }
+  });
+  
+  userCard.onclick = e => alert(`Outer target: ${e.target.tagName}`);
+  </script>
